@@ -10,8 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let times : Dictionary = ["Soft": 5, "Medium": 7, "Hard": 12];
-
+    let times : [String : Int] = ["Soft": 5, "Medium": 7, "Hard": 12];
+    var countdownTimer: Timer!
+    var totalTime = 60
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -20,7 +22,34 @@ class ViewController: UIViewController {
 
     @IBAction func hardnessSelected(_ sender: UIButton) {
         let hardness = sender.currentTitle;
-        print(times[hardness!]);
+        totalTime = times[hardness ?? "Soft"]! * 60;
+        
+        startTimer();
+    }
+    
+    func startTimer() {
+        countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateTime() {
+        print("\(timeFormatted(totalTime))")
+
+        if totalTime != 0 {
+            totalTime -= 1
+        } else {
+            endTimer()
+        }
+    }
+    
+    func endTimer() {
+        countdownTimer.invalidate()
+    }
+    
+    func timeFormatted(_ totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        let minutes: Int = (totalSeconds / 60) % 60
+        //     let hours: Int = totalSeconds / 3600
+        return String(format: "%02d:%02d", minutes, seconds)
     }
 }
 
