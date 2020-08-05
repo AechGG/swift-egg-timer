@@ -10,8 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
     let times : [String : Int] = ["Soft": 5, "Medium": 7, "Hard": 12];
-    var countdownTimer: Timer!
+    var countdownTimer: Timer = Timer();
     var totalTime = 60
     
     override func viewDidLoad() {
@@ -24,7 +25,7 @@ class ViewController: UIViewController {
         let hardness = sender.currentTitle;
         totalTime = times[hardness ?? "Soft"]! * 60;
         
-        endTimer();
+        countdownTimer.invalidate();
         startTimer();
     }
     
@@ -38,15 +39,11 @@ class ViewController: UIViewController {
         if totalTime != 0 {
             totalTime -= 1
         } else {
-            endTimer()
+            countdownTimer.invalidate();
+            titleLabel.text = "Done!";
         }
     }
-    
-    func endTimer() {
-        if (countdownTimer != nil) {
-            countdownTimer.invalidate()
-        }
-    }
+
     
     func timeFormatted(_ totalSeconds: Int) -> String {
         let seconds: Int = totalSeconds % 60
