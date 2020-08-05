@@ -10,9 +10,10 @@
 		8289893F24DAE4E400D1EE67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289893E24DAE4E400D1EE67 /* AppDelegate.swift */; };
 		8289894124DAE4E400D1EE67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289894024DAE4E400D1EE67 /* SceneDelegate.swift */; };
 		8289894324DAE4E400D1EE67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289894224DAE4E400D1EE67 /* ViewController.swift */; };
-		8289894624DAE4E400D1EE67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8289894424DAE4E400D1EE67 /* Main.storyboard */; };
 		8289894824DAE4E600D1EE67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8289894724DAE4E600D1EE67 /* Assets.xcassets */; };
-		8289894B24DAE4E600D1EE67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8289894924DAE4E600D1EE67 /* LaunchScreen.storyboard */; };
+		8289895324DAE51B00D1EE67 /* alarm_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8289895224DAE51B00D1EE67 /* alarm_sound.mp3 */; };
+		8289895624DAE52C00D1EE67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8289895424DAE52C00D1EE67 /* Main.storyboard */; };
+		8289895724DAE52C00D1EE67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8289895524DAE52C00D1EE67 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +21,11 @@
 		8289893E24DAE4E400D1EE67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8289894024DAE4E400D1EE67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8289894224DAE4E400D1EE67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8289894524DAE4E400D1EE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8289894724DAE4E600D1EE67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8289894A24DAE4E600D1EE67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8289894C24DAE4E600D1EE67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8289895224DAE51B00D1EE67 /* alarm_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm_sound.mp3; sourceTree = "<group>"; };
+		8289895424DAE52C00D1EE67 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		8289895524DAE52C00D1EE67 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +58,13 @@
 		8289893D24DAE4E400D1EE67 /* swift-egg-timer */ = {
 			isa = PBXGroup;
 			children = (
+				8289895224DAE51B00D1EE67 /* alarm_sound.mp3 */,
 				8289893E24DAE4E400D1EE67 /* AppDelegate.swift */,
 				8289894024DAE4E400D1EE67 /* SceneDelegate.swift */,
 				8289894224DAE4E400D1EE67 /* ViewController.swift */,
-				8289894424DAE4E400D1EE67 /* Main.storyboard */,
+				8289895524DAE52C00D1EE67 /* LaunchScreen.storyboard */,
+				8289895424DAE52C00D1EE67 /* Main.storyboard */,
 				8289894724DAE4E600D1EE67 /* Assets.xcassets */,
-				8289894924DAE4E600D1EE67 /* LaunchScreen.storyboard */,
 				8289894C24DAE4E600D1EE67 /* Info.plist */,
 			);
 			path = "swift-egg-timer";
@@ -125,9 +128,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8289894B24DAE4E600D1EE67 /* LaunchScreen.storyboard in Resources */,
+				8289895624DAE52C00D1EE67 /* Main.storyboard in Resources */,
+				8289895724DAE52C00D1EE67 /* LaunchScreen.storyboard in Resources */,
 				8289894824DAE4E600D1EE67 /* Assets.xcassets in Resources */,
-				8289894624DAE4E400D1EE67 /* Main.storyboard in Resources */,
+				8289895324DAE51B00D1EE67 /* alarm_sound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,25 +149,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		8289894424DAE4E400D1EE67 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8289894524DAE4E400D1EE67 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8289894924DAE4E600D1EE67 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8289894A24DAE4E600D1EE67 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8289894D24DAE4E600D1EE67 /* Debug */ = {
