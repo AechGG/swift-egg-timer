@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let softTime : Int = 5;
+    let mediumTime : Int = 7;
+    let hardTime: Int = 12;
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,5 +20,17 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func hardnessSelected(_ sender: UIButton) {
+        let hardness = sender.currentTitle;
+        
+        switch hardness {
+        case "Soft":
+            print(softTime)
+        case "Medium":
+            print(mediumTime)
+        default:
+            print(hardTime)
+        }
+    }
 }
 
