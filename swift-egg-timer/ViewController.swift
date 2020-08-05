@@ -28,7 +28,8 @@ class ViewController: UIViewController {
 
     @IBAction func hardnessSelected(_ sender: UIButton) {
         let hardness = sender.currentTitle;
-        totalTime = times[hardness ?? "Soft"]! * 60;
+        titleLabel.text = hardness;
+        totalTime = times[hardness ?? "Soft"]!;
         currentTime = totalTime;
         
         countdownTimer.invalidate();
@@ -51,6 +52,11 @@ class ViewController: UIViewController {
             countdownTimer.invalidate();
             titleLabel.text = "Done!";
             playSound(soundName: "alarm_sound");
+            //Code should execute after 0.2 second delay.
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                //Bring's sender's opacity back up to fully opaque.
+                self.titleLabel.text = "How do you like your eggs?";
+            }
         }
     }
 
