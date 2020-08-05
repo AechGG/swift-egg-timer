@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         let hardness = sender.currentTitle;
         totalTime = times[hardness ?? "Soft"]! * 60;
         
+        endTimer();
         startTimer();
     }
     
@@ -42,7 +43,9 @@ class ViewController: UIViewController {
     }
     
     func endTimer() {
-        countdownTimer.invalidate()
+        if (countdownTimer != nil) {
+            countdownTimer.invalidate()
+        }
     }
     
     func timeFormatted(_ totalSeconds: Int) -> String {
