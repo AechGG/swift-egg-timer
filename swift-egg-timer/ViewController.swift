@@ -28,8 +28,10 @@ class ViewController: UIViewController {
             print(softTime)
         case "Medium":
             print(mediumTime)
-        default:
+        case "Hard":
             print(hardTime)
+        default:
+            print("Error")
         }
     }
 }
