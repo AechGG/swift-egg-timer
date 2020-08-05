@@ -11,8 +11,11 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
+    
     let times : [String : Int] = ["Soft": 5, "Medium": 7, "Hard": 12];
     var countdownTimer: Timer = Timer();
+    var currentTime = 60;
     var totalTime = 60
     
     override func viewDidLoad() {
@@ -23,22 +26,26 @@ class ViewController: UIViewController {
 
     @IBAction func hardnessSelected(_ sender: UIButton) {
         let hardness = sender.currentTitle;
-        totalTime = times[hardness ?? "Soft"]! * 60;
+        totalTime = times[hardness ?? "Soft"]!;
+        currentTime = totalTime;
         
         countdownTimer.invalidate();
         startTimer();
     }
     
     func startTimer() {
+        progressBar.progress = 1.0;
         countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
     
     @objc func updateTime() {
-        print("\(timeFormatted(totalTime))")
-
-        if totalTime != 0 {
-            totalTime -= 1
+        print("\(timeFormatted(currentTime))")
+        
+        if currentTime != 0 {
+            progressBar.progress = Float(currentTime) / Float(totalTime);
+            currentTime -= 1
         } else {
+            progressBar.progress = 0.0;
             countdownTimer.invalidate();
             titleLabel.text = "Done!";
         }

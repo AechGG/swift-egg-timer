@@ -120,6 +120,21 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJN-th-c5K" userLabel="Timer View">
                                         <rect key="frame" x="0.0" y="571.33333333333337" width="374" height="246.66666666666663"/>
+                                        <subviews>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gEe-PS-9KV">
+                                                <rect key="frame" x="0.0" y="121" width="374" height="6"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="5" id="Jd7-5M-VVD"/>
+                                                </constraints>
+                                                <color key="progressTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="trackTintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </progressView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="gEe-PS-9KV" firstAttribute="centerY" secondItem="nJN-th-c5K" secondAttribute="centerY" id="AHY-tQ-Fqx"/>
+                                            <constraint firstItem="gEe-PS-9KV" firstAttribute="leading" secondItem="nJN-th-c5K" secondAttribute="leading" id="cJA-yT-hP0"/>
+                                            <constraint firstAttribute="trailing" secondItem="gEe-PS-9KV" secondAttribute="trailing" id="qM9-fg-Vb1"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -134,6 +149,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="progressBar" destination="gEe-PS-9KV" id="g6q-54-Qlu"/>
                         <outlet property="titleLabel" destination="XLm-5r-pSP" id="oEL-nW-m2j"/>
                     </connections>
                 </viewController>
