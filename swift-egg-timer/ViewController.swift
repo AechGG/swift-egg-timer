@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     @IBAction func hardnessSelected(_ sender: UIButton) {
         let hardness = sender.currentTitle;
         titleLabel.text = hardness;
-        totalTime = times[hardness ?? "Soft"]!;
+        totalTime = times[hardness ?? "Soft"]! * 60;
         currentTime = totalTime;
         
         countdownTimer.invalidate();
